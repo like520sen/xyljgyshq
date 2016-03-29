@@ -1,0 +1,393 @@
+*{margin:0;padding: 0;font-size: 16px;font-family: "Calibri", "微软雅黑", "宋体", Arial, Helvetica, STHeiti;}
+input,textarea{border: none;outline: none;-webkit-appearance: none;}
+input:focus,textarea:focus{border: none;outline: none;}
+body{background-color: #EEEEEE;}
+
+#header
+{
+    height: 60px;
+    width: 100%;
+    background-color: #20C375;
+    color: white;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+#bodyCover
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 1001;
+    cursor: pointer;
+    display: none;
+}
+
+/* login */
+#loginBox
+{
+    width: 300px;
+    padding: 20px;
+    border: 3px solid #20C375;
+    border-radius: 10px;
+    background-color: white;
+    margin: 200px auto 0;
+}
+
+.loginInput
+{
+    width: 298px;
+    border: 1px solid gray;
+    height: 40px;
+    border-radius: 5px;
+    display: block;
+    margin-top: 10px;
+    text-indent: 10px;
+}
+
+.loginInput:focus
+{
+    border: 1px solid gray;
+}
+
+#loginBox input[type=submit]
+{
+    display: block;
+    width: 300px;
+    border-radius: 5px;
+    background-color: #20C375;
+    color: white;
+    height: 40px;
+    margin: 20px 0 10px;
+    cursor: pointer;
+}
+
+/* manager */
+#headerTitle
+{
+    font-size: 20px;
+}
+
+#loginInfo
+{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    height: 60px;
+    font-weight: normal;
+}
+
+#managerAvatar
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 5px;
+    background-color: white;
+    display: block;
+    float: left;
+}
+
+#managerInfo
+{
+    height: 60px;
+    float: left;
+    margin-left: 20px;
+}
+
+#managerInfo span
+{
+    font-size: 14px;
+}
+
+#logout
+{
+    cursor: pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+#container
+{
+    float: left;
+    width: 100%;
+    margin-top: 60px;
+}
+
+#left
+{
+    width: 10%;
+    float: left;
+    background-color: #20C375;
+    position: fixed;
+    top: 60px;
+    left: 0;
+}
+
+#controlMenu
+{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.title
+{
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.subtitle
+{
+    font-size: 16px;
+    text-indent: 1em;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+#right
+{
+    float: left;
+    width: 90%;
+    margin-left: 10%;
+}
+
+#pSignList
+{
+    float: left;
+    width: 90%;
+    margin: 20px 5%;
+    background-color: white;
+    padding: 10px 0;
+    display: none;
+}
+
+#pSignForm,#calForm,#dSignForm
+{
+    width: 60%;
+    text-align: center;
+    float: left;
+    margin-left: 20%;
+    margin-top: 10px;
+}
+
+#pSignForm input[type=submit],#calForm input[type=submit],#dSignForm input[type=submit]
+{
+    width: 80px;
+    height: 24px;
+    position: relative;
+    line-height: 24px;
+    background-color: #20C375;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#pSignDate
+{
+    font-size: 24px;
+    text-align: center;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#pSignLList
+{
+    float: left;
+    width: 90%;
+    margin:10px 5%;
+}
+
+.pSignLabel
+{
+    height: 20px;
+    line-height: 20px;
+    border-radius: 15px;
+    background-color: #20C375;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#cal
+{
+    float: left;
+    width: 90%;
+    margin: 20px 5%;
+    background-color: white;
+    padding: 10px 0;
+    display: none;
+}
+
+#calInfo
+{
+    width: 100%;
+    text-align: center;
+    float: left;
+    height: 100px;
+    margin: 10px 0;
+}
+
+#calAvatar
+{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    vertical-align:top;
+}
+
+#calName
+{
+    line-height: 100px;
+    font-size: 28px;
+    height: 100px;
+    display: inline-block;
+    vertical-align:top;
+    margin-left: 100px;
+}
+
+#calContainer
+{
+    width: 90%;
+    margin: 10px 5%;
+    float: left;
+}
+
+#calDate
+{
+    font-size: 24px;
+    text-align: center;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#dSignList
+{
+    float: left;
+    width: 90%;
+    margin: 20px 5%;
+    background-color: white;
+    padding: 10px 0;
+    display: none;
+}
+
+#dSignDate
+{
+    font-size: 24px;
+    text-align: center;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#dSignContainer
+{
+    width: 90%;
+    margin: 10px 5%;
+    float: left;
+}
+
+.dSignBox
+{
+    float: left;
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 20px;
+    outline: 2px solid #20C375;
+}
+
+.dSignHeader
+{
+    width: 100%;
+    float: left;
+    background-color: #20C375;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.dSignInfo
+{
+    float: left;
+    width: 80%;
+    height: 70px;
+    margin: 0 10%;
+}
+
+.dSignLine
+{
+    height: 35px;
+    line-height: 35px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.update
+{
+    font-size: 14px;
+    color: #20C375;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.dSignTitle
+{
+    width: 107px;
+    display: inline-block;
+    text-align: left;
+    font-size: 15px;
+}
+
+#signUpdate
+{
+    background-color: white;
+    z-index: 1002;
+    position: fixed;
+    padding: 20px 10px;
+    width: 16%;
+    margin: 150px 42% 0;
+    display: none;
+}
+
+#signUpdate input[name=time]
+{
+    border: 1px solid black;
+    display: block;
+    width: 80%;
+    height: 30px;
+    margin: auto;
+    line-height: 30px;
+    text-indent: 10px;
+}
+
+#signUpdate input[type=submit]
+{
+    width: 80%;
+    margin: 10px auto 0;
+    background-color: #20C375;
+    color: white;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}

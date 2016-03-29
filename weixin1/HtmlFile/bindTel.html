@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link href="../dist/style/weui.css" rel="stylesheet">
+    <title>输入手机号查询是否报名</title>
+</head>
+<body>
+<form id="bindTelForm" class="weui_cells weui_cells_form" action="bindTel.php" method="post" name="bindTelForm">
+    <!--<div class="page slideIn dialog">-->
+    <!--<div class="hd">-->
+        <!--<h1 class="page_title">输入手机号查询是否报名</h1>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>输入手机号查询是否已经报名：</p>
+        </div>
+        <div class="weui_cell_ft" >输入手机号查询是否报名</div>
+    </div>
+
+    <div class="weui_cell">
+        <div class="weui_cell_hd">
+            <label class="weui_label"><span style="color:red">*</span>电话:</label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="number" placeholder="请输入手机号码" pattern="[0-9]*" name="tel">
+        </div>
+    </div>
+    <!--<a class="weui_btn weui_btn_primary" href="javascript:checkRegister();">提交申请</a>-->
+
+    <input class="weui_btn weui_btn_primary" type="submit" value="查询">
+    <div class="button_sp_area">
+    </div>
+
+    <!--直接访问php的模式-->
+    <!--<a class="weui_btn weui_btn_primary" href="javascript:;">提交申请</a>-->
+    <!--<input type="submit" value="登录">-->
+    <!--<input class="weui_btn weui_btn_primary" type="submit" value="提交申请">-->
+    <!--<div class="button_sp_area">-->
+    <!--</div>-->
+</form>
+</body>
+</html>

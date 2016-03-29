@@ -1,0 +1,19 @@
+*{margin:0;padding: 0;font-size: 16px;font-family: "Calibri", "微软雅黑", "宋体", Arial, Helvetica, STHeiti;}
+input,textarea{border: none;outline: none;-webkit-appearance: none;}
+input:focus,textarea:focus{border: none;outline: none;}
+body{background-color: #EEEEEE;}
+
+#page_title_my
+{
+    height: 60px;
+    width: 100%;
+    background-color: #20C375;
+    color: white;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    font-weight: bold;
+    z-index: 1000;
+}

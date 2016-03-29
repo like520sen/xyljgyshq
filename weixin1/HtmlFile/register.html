@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>参与统一现浇申请</title>
+    <link href="../dist/style/weui.css" rel="stylesheet">
+    <script src="javascripts/angular.min.js"></script>
+
+    <script src="../javascripts/register.js"></script>
+    <script src="../javascripts/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('validateCtrl', function($scope) {
+        $scope.user = 'John Doe';
+        $scope.email = 'john.doe@gmail.com';
+    });
+</script>
+
+<form id="registerForm" class="weui_cells weui_cells_form" action="register.php" method="post" name="registerForm"
+      ng-app="myApp" ng-controller="validateCtrl"  novalidate>
+
+    <p>用户名:<br>
+        <input type="number" name="user" ng-model="user" required>
+        <span style="color:red" ng-show="registerForm.user.$dirty && registerForm.user.$invalid">
+            <span ng-show="registerForm.user.$error.required">用户名是必须的。</span>
+        </span>
+    </p>
+
+    <p>
+        <input type="submit"
+               ng-disabled="registerForm.user.$dirty && registerForm.user.$invalid">
+    </p>
+
+
+    <div class="weui_cell">
+        <div class="weui_cell_hd">
+            <label class="weui_label"><span style="color:red">*</span>楼栋:</label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="number" placeholder="请输入楼栋" name="building"
+                   ng-model="building" required>
+
+            <span style="color:red" ng-show="registerForm.building.$dirty && registerForm.building.$invalid">
+                <span ng-show="registerForm.building.$error.required">必填项</span>
+            </span>
+
+        </div>
+    </div>
+
+    <input class="weui_btn weui_btn_primary" type="submit" value="提交申请" ng-disabled="registerForm.building.$dirty && registerForm.building.$invalid">
+    <!--<a class="weui_btn weui_btn_primary" href="javascript:checkRegister();">提交申请</a>-->
+    <div class="button_sp_area">
+    </div>
+
+    <div class="weui_cell">
+        <div class="weui_cell_hd">
+            <label class="weui_label"><span style="color:red">*</span>楼栋:</label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="number" placeholder="请输入楼栋" pattern="[0-9]*" name="building"
+                   required="required">
+        </div>
+    </div>
+
+    <div class="weui_cell">
+        <div class="weui_cell_hd">
+            <label class="weui_label"><span style="color:red">*</span>楼层:</label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="number" placeholder="请输入楼层" pattern="[0-9]*" name="floor">
+        </div>
+    </div>
+
+    <div class="weui_cell">
+        <div class="weui_cell_hd">
+            <label class="weui_label"><span style="color:red">*</span>房号:</label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="number" placeholder="请输入房号" pattern="[1-8]*" name="roomNumber">
+        </div>
+    </div>
+
+    <div class="weui_cell">
+        <div class="weui_cell_hd">
+            <label class="weui_label"><span style="color:red">*</span>姓名:</label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="text" placeholder="请输入您的姓名" name="name">
+        </div>
+    </div>
+
+    <!--<div class="weui_cell weui_cell_select weui_select_before">-->
+        <!--<div class="weui_cell_hd">-->
+            <!--<span style="color:red">*</span>-->
+            <!--<select class="weui_select">-->
+                <!--<option value="1">+86</option>-->
+                <!--<option value="2">+80</option>-->
+                <!--<option value="3">+84</option>-->
+                <!--<option value="4">+87</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <!--<div class="weui_cell_bd weui_cell_primary">-->
+            <!--<input class="weui_input" type="number" placeholder="请输入手机号码" pattern="[0-9]*" name="tel">-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="weui_cell">
+        <div class="weui_cell_hd">
+            <label class="weui_label"><span style="color:red">*</span>电话:</label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="number" placeholder="请输入手机号码" pattern="[0-9]*" name="tel">
+        </div>
+    </div>
+
+    <div class="weui_cell">
+        <div class="weui_cell_hd">
+            <label class="weui_label">&nbsp;Q&nbsp;Q:</label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="number" placeholder="请输入QQ号" pattern="[0-9]*" name="qq">
+        </div>
+    </div>
+
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <textarea class="weui_textarea" placeholder="请输入备注内容" rows="2" name="memo"></textarea>
+            <div class="weui_textarea_counter"><span>0</span>/50</div>
+        </div>
+    </div>
+
+    <div class="weui_cell weui_cells_checkbox">
+        <label class="weui_cell weui_check_label" for="checkbox1">
+            <div class="weui_cell_hd">
+                <input id="checkbox1" class="weui_check" type="checkbox" checked="checked" name="permission">
+                <i class="weui_icon_checked"></i>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>接受将个人信息共享给楼上楼下的邻居</p>
+            </div>
+        </label>
+    </div>
+
+    <input class="weui_btn weui_btn_primary" type="submit" value="提交申请">
+    <!--<a class="weui_btn weui_btn_primary" href="javascript:checkRegister();">提交申请</a>-->
+    <div class="button_sp_area">
+    </div>
+
+
+    <!--直接访问php的模式-->
+    <!--&lt;!&ndash;<a class="weui_btn weui_btn_primary" href="javascript:;">提交申请</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="submit" value="登录">&ndash;&gt;-->
+    <!--<input class="weui_btn weui_btn_primary" type="submit" value="提交申请">-->
+    <!--&lt;!&ndash;<div class="button_sp_area">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+</form>
+</body>
+</html>

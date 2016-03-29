@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+    <link href="../dist/style/weui.css" rel="stylesheet">
+    <link href="stylesheets/mystyle.css" rel="stylesheet">
+    <script src="../javascripts/registerInfo.js"></script>
+    <script src="../javascripts/jquery-1.10.2.min.js"></script>
+    <script src="javascripts/angular.min.js"></script>
+    <title>我的报名信息</title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+    <!--<table>-->
+        <!--<tr ng-repeat="x in names">-->
+            <!--<td>房号：</td>-->
+            <!--<td>{{ x.roomID }}</td>-->
+            <!--<td>姓名：</td>-->
+            <!--<td>{{ x.name }}</td>-->
+            <!--<td>电话号码：</td>-->
+            <!--<td>{{ x.tel }}</td>-->
+            <!--<td>QQ：</td>-->
+            <!--<td>{{ x.qq }}</td>-->
+            <!--<td>备注：</td>-->
+            <!--<td>{{ x.memo }}</td>-->
+            <!--<td>是否共享联系方式给楼上楼下：</td>-->
+            <!--<td>{{ x.permission }}</td>-->
+            <!--<td>审核状态：</td>-->
+            <!--<td>{{ x.checked }}</td>-->
+            <!--<td>报名时间：</td>-->
+            <!--<td>{{ x.createTime }}</td>-->
+        <!--</tr>-->
+    <!--</table>-->
+
+    <div ng-repeat="x in datas">
+        <!--<p>{{ele.meta.author}}</p>-->
+        <!--<p>{{ele.meta.title}}</p>-->
+        <div class="bd">
+            <div class="weui_cells_title">编号：{{ $index + 1 }}</div>
+            <div class="weui_cells">
+                <!--<div class="weui_cell">-->
+                    <!--<div class="weui_cell_bd weui_cell_primary">-->
+                        <!--<p>房号：</p>-->
+                    <!--</div>-->
+                    <!--<div class="weui_cell_">{{ x.roomID }}</div>-->
+                <!--</div>-->
+
+                <!--<div class="weui_cell">-->
+                    <!--<div class="weui_cell_bd weui_cell_primary">-->
+                        <!--<p>电话号码：</p>-->
+                    <!--</div>-->
+                    <!--<div class="weui_cell_">{{ x.tel }}</div>-->
+                <!--</div>-->
+                <!---->
+                <div class="weui_cell">
+                    <p>房号：{{ x.roomID }}</p>
+                </div>
+
+                <div class="weui_cell">
+                    <p>姓名：{{ x.name }}</p>
+                </div>
+
+                <div class="weui_cell">
+                    <p>电话号码：{{ x.tel }}</p>
+                </div>
+
+                <div class="weui_cell">
+                    <p>QQ：{{ x.qq }}</p>
+                </div>
+
+                <div class="weui_cell">
+                    <p>报名时间：{{ x.createTime }}</p>
+                </div>
+                <div class="weui_cell">
+                    <p>报名状态：{{ x.checked }}</p>
+                </div>
+                <div class="weui_cell">
+                    <p>共享联系方式给楼上楼下：{{ x.permission }}</p>
+                </div>
+
+                <div class="weui_cell">
+                    <p>备注：{{ x.memo }}</p>
+                </div>
+
+                <!--<div class="line_01">———</div>-->
+
+            </div>
+
+        </div>
+        <tr></tr>
+        <!--<div class="weui_cells_title">编号：{{ $index + 1 }}</div>-->
+        <!--<div class="weui_cells">-->
+            <!--<div class="weui_cell">-->
+                <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<p>房号：{{ x.roomID }}</p>-->
+                    <!--<p>姓名：{{ x.name }}</p>-->
+                    <!--<p>电话号码：{{ x.tel }}</p>-->
+                    <!--<p>QQ：{{ x.qq }}</p>-->
+                    <!--<p>报名时间：{{ x.createTime }}</p>-->
+                    <!--<p>报名状态：{{ x.checked }}</p>-->
+                    <!--<p>共享联系方式给楼上楼下：{{ x.permission }}</p>-->
+                    <!--<p>备注：{{ x.memo }}</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+        <!--<p>编号：{{ $index + 1 }}</p>-->
+        <!--<p>房号：{{ x.roomID }}</p>-->
+        <!--<p>姓名：{{ x.name }}</p>-->
+        <!--<p>电话号码：{{ x.tel }}</p>-->
+        <!--<p>QQ：{{ x.qq }}</p>-->
+        <!--<p>备注：{{ x.memo }}</p>-->
+        <!--<p>是否共享联系方式给楼上楼下：{{ x.permission }}</p>-->
+        <!--<p>报名状态：{{ x.checked }}</p>-->
+        <!--<p>报名时间：{{ x.createTime }}</p>-->
+    </div>
+    <!--<input class="weui_btn weui_btn_primary" type="submit" value="提交申请">-->
+<!--</input>-->
+    <a class="weui_btn weui_btn_primary" href="fixRegister.html">我要修改</a>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("registerInfo.php")
+                .success(function (response) {$scope.datas = response.registerInfos;});
+    });
+</script>
+
+<!--<script type="text/javascript">-->
+    <!--$(document).ready(function(){-->
+            <!--$.ajax({-->
+                <!--type: "GET",-->
+                <!--url:"registerInfo.php",-->
+                <!--dataType: "json",-->
+                <!--jsonp: "callback",-->
+                <!--success: function(json){-->
+<!--//                    var item = '<div class="wrap"><img width="100" height="100" src="'+json.imageUrl+'">'+json.name+'<br>'+json.content+'</div>';//根据后台传递过来的数据生成html内容。-->
+                    <!--alert("yes");-->
+                <!--},-->
+                <!--error: function(){-->
+                    <!--alert("no");-->
+                <!--}-->
+            <!--});-->
+    <!--})-->
+<!--</script>-->
+
+</body>
+</html>
+
+
+<!--<p>编号：{{ $index + 1 }}</p>-->
+<!--<p>房号：{{ x.roomID }}</p>-->
+<!--<p>姓名：{{ x.name }}</p>-->
+<!--<p>电话号码：{{ x.tel }}</p>-->
+<!--<p>QQ：{{ x.qq }}</p>-->
+<!--<p>备注：{{ x.memo }}</p>-->
+<!--<p>是否共享联系方式给楼上楼下：{{ x.permission }}</p>-->
+<!--<p>报名状态：{{ x.checked }}</p>-->
+<!--<p>报名时间：{{ x.createTime }}</p>-->
